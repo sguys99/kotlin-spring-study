@@ -19,9 +19,9 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 // 그런데 클래스에 네이밍을 지정해주는 방법도 있다.
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 data class UserRequest(
-    val name: String? = null,
-    val age: Int? = null,
-    val email: String? = null,
+    var name: String? = null,
+    var age: Int? = null,
+    var email: String? = null,
     var address: String? = null,
     var phoneNumber: String? = null // phone_number
 )
