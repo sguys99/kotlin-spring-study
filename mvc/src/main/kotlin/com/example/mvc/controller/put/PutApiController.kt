@@ -3,6 +3,7 @@ package com.example.mvc.controller.put
 import com.example.mvc.model.http.Result
 import com.example.mvc.model.http.UserRequest
 import com.example.mvc.model.http.UserResponse
+import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -30,7 +31,7 @@ class PutApiController {
 
     // 이제 UserResponse가 가도록 기능을 만들어보자.
     @PutMapping(path=["/put-mapping/object"])
-    fun putMappingObject(@RequestBody userRequest: UserRequest): UserResponse {
+    fun putMappingObject(@Valid @RequestBody userRequest: UserRequest): UserResponse {
         // 0. Response
         return UserResponse().apply{
             // 1. result
